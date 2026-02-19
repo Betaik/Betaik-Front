@@ -10,11 +10,9 @@ import { MdOutlineDashboard, MdOutlineMap } from "react-icons/md";
 
 import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
-import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -97,20 +95,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:p-1.5"
-            >
-              <Link href="/" className="flex items-center gap-2 p-2 mt-3 justify-center">
-                <Image
-                  src="/icons/Beitak.svg"
-                  alt="Logo"
-                  width={108}
-                  height={44}
-                  priority
-                />
-              </Link>
-            </SidebarMenuButton>
+            <Link href="/" className="flex items-center gap-2 p-2 mt-3 justify-center">
+              <Image
+                src="/icons/Beitak.svg"
+                alt="Logo"
+                width={108}
+                height={44}
+                priority
+              />
+            </Link>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
