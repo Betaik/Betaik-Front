@@ -1,4 +1,7 @@
 "use client"
+import dynamic from "next/dynamic"
+// import ChartAreaInteractive from "@/components/graph/ChartAreaInteractive"
+const HeroCards = dynamic(() => import("@/components/cards/HeroCards"), { ssr: false })
 export default function Homepage() {
 
   return (
@@ -13,11 +16,13 @@ export default function Homepage() {
               </div>
               <div className="flex items-center justify-between ">
                 <div className="flex items-center gap-4">
-                  <button className="btn btn-sm px-4 py-3 cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span>  Add New Drom</button>
-                  <button className="btn btn-sm px-4 py-3 cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span> Add Payment Plan</button>
+                  <button className="sm:px-4 sm:text-[1rem] text-sm sm:py-3 px-2 py-1 cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span>  Add New Drom</button>
+                  <button className="sm:px-4 sm:text-[1rem] text-sm sm:py-3 px-2 py-1  cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span> Add Payment Plan</button>
                 </div>
               </div>
             </div>
+            <HeroCards />
+            {/* <ChartAreaInteractive /> */}
           </div>
         </div>
       </div>

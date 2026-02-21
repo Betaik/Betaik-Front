@@ -53,7 +53,7 @@ export function SiteHeader() {
           className="rounded-full"
         />
 
-        <h1 className="text-base font-medium">GIU University</h1>
+        <h1 className="text-base font-medium sm:block hidden">GIU University</h1>
 
         <div className="ml-auto flex items-center gap-2">
           <nav>
@@ -77,7 +77,7 @@ export function SiteHeader() {
               width={40}
               height={40}
             />
-            <h3 className="text-sm text-black">John Doe</h3>
+            <h3 className="text-sm text-black sm:block hidden">John Doe</h3>
           </nav>
 
           <div ref={containerRef} className="relative">
