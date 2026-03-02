@@ -2,7 +2,16 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  
+}
 
 @theme inline
 {
@@ -48,6 +57,11 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background:  #fff;
+    --foreground: #0a0a0a;         
+  }
 :root
 {
   --radius: 0.625rem;

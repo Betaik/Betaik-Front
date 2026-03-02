@@ -1,7 +1,5 @@
-import React from 'react'
-import Homepage from './pages/home/Homepage'
-
-const Home = () => {
+import Image from "next/image";
+export default function Home() {
   return (
     <>
       <Homepage />
