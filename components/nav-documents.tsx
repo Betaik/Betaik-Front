@@ -32,7 +32,8 @@ export function NavDocuments({
         {items.map((item) => {
           const isActive =
             pathname === item.url ||
-            pathname.startsWith(item.url + "/")
+            pathname.startsWith(item.url + "/") ||
+            (item.url === "/" && (pathname === "/"));
 
           return (
             <Link href={item.url} key={item.name}>

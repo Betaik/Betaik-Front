@@ -1,12 +1,12 @@
 "use client"
+import PropertyFilters from "@/components/Filters/PropertyFilters";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link";
-import React, { useState } from 'react'
 
-type TabType = "Active" | "Draft" | "Expired";
+
 
 const DormsMgt = () => {
-    const [activeTab, setActiveTab] = useState<TabType>("Active");
+
     return (
         <>
             <div className="flex flex-1 flex-col">
@@ -20,30 +20,17 @@ const DormsMgt = () => {
                                 </div>
                                 <div className="flex md:flex-row flex-col items-start md:items-center gap-2 justify-center md:justify-between mt-4 w-full">
                                     <div >
-                                        <Tabs defaultValue="account" className="w-100">
+                                        <Tabs defaultValue="Student Housing" className="w-100">
                                             <TabsList>
-                                                <TabsTrigger value="account">Student Housing</TabsTrigger>
-                                                <TabsTrigger value="password">Dorms</TabsTrigger>
+                                                <TabsTrigger value="Student Housing">Student Housing</TabsTrigger>
+                                                <Link href="/dorms-mgt/dorms" > <TabsTrigger value="Dorms">Dorms</TabsTrigger> </Link>
                                             </TabsList>
                                         </Tabs>
                                     </div>
-
-                                    <Link href="/paymentPlan" className="sm:px-4 sm:text-[1rem] text-sm px-2 py-1  cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span> Add Payment Plan</Link>
-
+                                    <Link href="/dorms-mgt/student-housing" className="sm:px-4 sm:text-[1rem] text-sm px-2 py-1  cursor-pointer flex items-center gap-3 font-light text-white rounded-lg bg-[#155DFC] hover:bg-[#8AAEFE]"><span className="text-2xl">+</span> Add New Student Housing</Link>
                                 </div>
-                                <div className="flex flex-col items-start gap-2">
-                                    <div className="w-52.75 h-9 flex gap-5 mt-5">
-                                        <div className={` text-sm cursor-pointer ${activeTab === "Active" ? "text-[#155DFC] bg-gray-100 rounded-2xl px-3 py-2" : "text-[#7F8595] px-3 py-2"}`} onClick={() => setActiveTab("Active")}>
-                                            Active
-                                        </div>
-                                        <div className={` text-sm cursor-pointer ${activeTab === "Draft" ? "text-[#155DFC] bg-gray-100 rounded-2xl px-3 py-2" : "text-[#7F8595] px-3 py-2"}`} onClick={() => setActiveTab("Draft")}>
-                                            Draft
-                                        </div>
-                                        <div className={` text-sm cursor-pointer ${activeTab === "Expired" ? "text-[#155DFC] bg-gray-100 rounded-2xl px-3 py-2" : "text-[#7F8595] px-3 py-2"}`} onClick={() => setActiveTab("Expired")}>
-                                            Expired
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-2"></div>
+                                <div className="flex flex-col items-start gap-2 w-full">
+                                    <PropertyFilters />
                                 </div>
                             </div>
                         </div>
